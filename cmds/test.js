@@ -19,7 +19,7 @@ class Prefix {
     }
 }
 module.exports = {
-    "command-info": {
+    "command-data": {
 
     },
     Slash, Prefix
