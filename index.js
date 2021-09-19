@@ -18,7 +18,9 @@ client.on("message", (msg) => {
   console.log(msg.author.tag+": "+msg.content)
 });
 client.on("interactionCreate", interaction => {
-  interaction.reply("when the red is sus");
+  interaction.reply("when the red is sus", {
+    ephemeral: true
+  });
   cmdh.handleSlash(interaction);
 })
 client.login(process.env.TOKEN);
