@@ -9,12 +9,13 @@ const client = new Discord.Client({intents: [Discord.Intents.FLAGS.GUILD_MESSAGE
 
 client.on("ready", () => {
   console.log(client.user.tag +" has logged in!");
-  client.application.commands.create({
-    name: "amogus",
-    description: "makes u amogsed"
-  });
 });
 client.on("message", (msg) => {
+  if (Object.keys(config.get("settings")["prefix"]) == undefined) {
+    cmdh.handlePrefix(msg, config.get("settings")["defaultPrefix"]);
+  } else {
+    cmdh.handlePrefix(msg, config.get("settings")["prefix"][msg.guild.id]);
+  }
   console.log(msg.author.tag+": "+msg.content)
 });
 client.on("interactionCreate", interaction => {

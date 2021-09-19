@@ -20,7 +20,7 @@ module.exports = new class Handler {
         let _cmds = require("fs").readdirSync("cmds/");
         let cmds = _cmds.map(filename => {
             let content = require("./cmds/" + filename);
-            let requiredStuff = ["command-data", "execute"];
+            let requiredStuff = ["command-data", "Slash", "Prefix"];
             requiredStuff.forEach(requiredThing => {
                 if(!content[requiredThing]) throw new Error(filename + " is missing the required arg: " + requiredThing);
             });
@@ -41,6 +41,13 @@ module.exports = new class Handler {
      * @description handleSlash but worse (prefix based instead of slash based)
      */
     handlePrefix(msg, prefix) {
-
+        if(!msg.content.startsWith(prefix)) return;
+        let cmd = msg.content.split(" ");
+        cmd[0] = cmd[0].substr(prefix.length, cmd[0].length);
+        this.cmds.forEach(item => {
+            if(item.filename == cmd[0]+".js") {
+                new item.content.Prefix(msg, cmd, this.client)
+            }
+        });
     }
 }
