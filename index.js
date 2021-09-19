@@ -11,12 +11,12 @@ client.on("ready", () => {
   console.log(client.user.tag +" has logged in!");
 });
 client.on("message", (msg) => {
+  console.log(msg.author.tag+": "+msg.content)
   if (config.get("settings")["prefix"][msg.guild.id] == undefined) {
     cmdh.handlePrefix(msg, config.get("settings")["defaultPrefix"]);
   } else {
     cmdh.handlePrefix(msg, config.get("settings")["prefix"][msg.guild.id]);
   }
-  console.log(msg.author.tag+": "+msg.content)
 });
 client.on("interactionCreate", interaction => {
   if(interaction.isCommand()) interaction.reply({
