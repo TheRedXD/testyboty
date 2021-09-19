@@ -18,7 +18,8 @@ client.on("message", (msg) => {
   console.log(msg.author.tag+": "+msg.content)
 });
 client.on("interactionCreate", interaction => {
-  interaction.reply("when the red is sus", {
+  if(interaction.isCommand()) interaction.reply({
+    content: "red's kinda sus ngl",
     ephemeral: true
   });
   cmdh.handleSlash(interaction);
