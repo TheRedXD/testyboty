@@ -15,7 +15,7 @@ class Prefix {
         this.execute();
     }
     execute() {
-        console.log("got here")
+        this.msg.reply("Hello! This should work!")
     }
 }
 module.exports = {
