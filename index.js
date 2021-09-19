@@ -10,4 +10,4 @@ client.on("ready", () => {
 client.on("message", (msg) => {
   console.log(msg.author.tag+": "+msg.content)
 });
-client.login(config.get("token") ?? process.env.TOKEN);
+client.login(config.get("token") ?? process.env.TOKEN); 
