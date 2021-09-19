@@ -9,13 +9,13 @@ const client = new Discord.Client({intents: [Discord.Intents.FLAGS.GUILD_MESSAGE
 
 client.on("ready", () => {
   console.log(client.user.tag +" has logged in!");
+  client.application.commands.create({
+    name: "amogus",
+    description: "makes u amogsed"
+  });
 });
 client.on("message", (msg) => {
   console.log(msg.author.tag+": "+msg.content)
-});
-client.application.commands.create({
-  name: "amogus",
-  description: "makes u amogsed"
 });
 client.on("interactionCreate", interaction => {
   cmdh.handleSlash(interaction);
