@@ -44,6 +44,7 @@ module.exports = new class Handler {
         if(!msg.content.startsWith(prefix)) return;
         let cmd = msg.content.split(" ");
         cmd[0] = cmd[0].substr(prefix.length, cmd[0].length);
+        if(!this.cmds.map(i => i.filename).includes(cmd[0]+".js")) {msg.reply("Sorry, but this command does not exist!"); return;};
         this.cmds.forEach(item => {
             if(item.filename == cmd[0]+".js") {
                 new item.Prefix(msg, cmd, this.client)
