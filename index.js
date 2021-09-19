@@ -11,7 +11,7 @@ client.on("ready", () => {
   console.log(client.user.tag +" has logged in!");
 });
 client.on("message", (msg) => {
-  if (Object.keys(config.get("settings")["prefix"]) == undefined) {
+  if (config.get("settings")["prefix"] == undefined) {
     cmdh.handlePrefix(msg, config.get("settings")["defaultPrefix"]);
   } else {
     cmdh.handlePrefix(msg, config.get("settings")["prefix"][msg.guild.id]);
