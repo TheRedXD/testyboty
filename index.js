@@ -18,6 +18,7 @@ client.on("message", (msg) => {
   console.log(msg.author.tag+": "+msg.content)
 });
 client.on("interactionCreate", interaction => {
+  interaction.reply("when the red is sus");
   cmdh.handleSlash(interaction);
 })
 client.login(process.env.TOKEN);
