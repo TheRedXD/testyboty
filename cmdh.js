@@ -46,7 +46,7 @@ module.exports = new class Handler {
         cmd[0] = cmd[0].substr(prefix.length, cmd[0].length);
         this.cmds.forEach(item => {
             if(item.filename == cmd[0]+".js") {
-                new item.content.Prefix(msg, cmd, this.client)
+                new item.Prefix(msg, cmd, this.client)
             }
         });
     }
