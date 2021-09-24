@@ -21,6 +21,7 @@
     "dotenv": "^10.0.0",
     "mineflayer": "latest",
     "vec3": "latest",
-    "prismarine-viewer": "latest"
+    "prismarine-viewer": "latest",
+    "blueutilities": "latest"
   }
 }
