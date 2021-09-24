@@ -1,7 +1,7 @@
 let bot;
 let config = require("../../config.js");
 let perms = require("../../permissions.js");
-
+let launchedBot = require("./bot/index.js");
 function setBot(e) {
     bot = e;
 };
@@ -17,7 +17,10 @@ function getPermsAPI() {
 function getConfig() {
     return config;
 };
+function load() {
+    launchedBot.load();
+}
 
 module.exports = {
-    setBot, getBot, getPermsAPI, getConfig
+    setBot, getBot, getPermsAPI, getConfig, load
 }

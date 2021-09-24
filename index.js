@@ -6,6 +6,9 @@ let cmdh = require("./cmdh");
 dotenv.config();
 const config = require("./config.js");
 const client = new Discord.Client({intents: [Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS]});
+const api = require("./libs/mclink/api.js");
+
+api.load();
 
 client.on("ready", () => {
   console.log(client.user.tag +" has logged in!");
