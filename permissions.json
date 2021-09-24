@@ -1,0 +1,15 @@
+{
+    "commands": {
+        "sudo_commands_allowed": 3,
+        "goto": 1,
+        "position": 1,
+        "eval": 3,
+        "sudo": 2,
+        "msgme": 0,
+        "ban": 3,
+        "perm": 10,
+        "unban": 3,
+        "playerinfo": 3,
+        "gotohere": 1
+    }
+}

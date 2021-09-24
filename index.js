@@ -19,10 +19,8 @@ client.on("message", (msg) => {
   }
 });
 client.on("interactionCreate", interaction => {
-  if(interaction.isCommand()) interaction.reply({
-    content: "red's kinda sus ngl",
-    ephemeral: true
-  });
-  cmdh.handleSlash(interaction);
+  if(interaction.isCommand()) {
+    cmdh.handleSlash(interaction); 
+  }
 })
 client.login(process.env.TOKEN);

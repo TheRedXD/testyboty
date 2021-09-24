@@ -10,6 +10,8 @@
  * @description Command Handler
  * @todo Finish this
  */
+const perms = require("./permissions.js");
+
 module.exports = new class Handler {
     constructor(client) {
         this.client = client;
@@ -38,13 +40,14 @@ module.exports = new class Handler {
     }
     /**
      * @todo Finish this stupid thing
-     * @description handleSlash but worse (prefix based instead of slash based)
+     * @description handleSlash but way faster to deploy
      */
     handlePrefix(msg, prefix) {
         if(!msg.content.startsWith(prefix)) return;
         let cmd = msg.content.split(" ");
         cmd[0] = cmd[0].substr(prefix.length, cmd[0].length);
         if(!this.cmds.map(i => i.filename).includes(cmd[0]+".js")) {msg.reply("Sorry, but this command does not exist!"); return;};
+        if(!perms.matches(msg.author.id, cmd[0], "commands")) {msg.reply("Sorry, but you have no permissions to run this command!"); return};
         this.cmds.forEach(item => {
             if(item.filename == cmd[0]+".js") {
                 new item.Prefix(msg, cmd, this.client)

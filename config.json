@@ -1,8 +1,21 @@
 {
-  "settings": {
-    "prefix": {
+  "login": {
+    "method": "microsoft"
+  },
+  "host": {
+    "ip": "play.totalfreedom.me",
+    "version": "1.17.1"
+  },
+  "followPlayer": "_TheRedX",
+  "permissions": {
+    
+  },
+  "permissionsAll": 0,
+  "botOwner": "574110505254256640",
+  "banned": [],
+  "defaultPrefix": "!",
+  "prefix": {
 
-    },
-    "defaultPrefix": "!"
-  }
+  },
+  "username": "Duck575"
 }
