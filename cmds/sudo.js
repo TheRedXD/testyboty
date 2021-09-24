@@ -19,6 +19,7 @@ class Prefix {
         this.execute();
     }
     execute() {
+        let args;
         if (this.msg.content.includes(" ")) {
             args = this.msg.content.split(" ");
             args.shift();
