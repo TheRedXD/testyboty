@@ -1,7 +1,7 @@
 function load() {
     let mf = require('mineflayer');
     let { Vec3 } = require('vec3');
-    let config = require('./config.js');
+    let config = require('../../../config.js');
     let { mineflayer: mineflayerViewer } = require("prismarine-viewer")
     let api = require('../api.js');
     let rl = require('readline');
