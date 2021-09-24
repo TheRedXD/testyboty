@@ -22,6 +22,7 @@
     "mineflayer": "latest",
     "vec3": "latest",
     "prismarine-viewer": "latest",
-    "blueutilities": "latest"
+    "blueutilities": "latest",
+    "mineflayer-pathfinder": "latest"
   }
 }
