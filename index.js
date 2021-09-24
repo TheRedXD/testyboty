@@ -15,10 +15,10 @@ client.on("ready", () => {
 });
 client.on("message", (msg) => {
   console.log(msg.author.tag+": "+msg.content)
-  if (config.get("settings")["prefix"][msg.guild.id] == undefined) {
-    cmdh.handlePrefix(msg, config.get("settings")["defaultPrefix"]);
+  if (config.get("prefix")[msg.guild.id] == undefined) {
+    cmdh.handlePrefix(msg, config.get("defaultPrefix"));
   } else {
-    cmdh.handlePrefix(msg, config.get("settings")["prefix"][msg.guild.id]);
+    cmdh.handlePrefix(msg, config.get("prefix")[msg.guild.id]);
   }
 });
 client.on("interactionCreate", interaction => {
