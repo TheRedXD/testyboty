@@ -9,6 +9,7 @@ const client = new Discord.Client({intents: [Discord.Intents.FLAGS.GUILD_MESSAGE
 const api = require("./libs/mclink/api.js");
 
 api.load();
+api.setClient(client);
 
 client.on("ready", () => {
   console.log(client.user.tag +" has logged in!");

@@ -42,6 +42,7 @@ function load() {
             thenick = msg.toString().split("\n")[1].split(" ")[2];
         }
         console.log(msg.toAnsi());
+        api.getClient().channels.cache.get(config.get("commandsChannel")).send(msg.toString());
     });
     var bonku = 0;
 
