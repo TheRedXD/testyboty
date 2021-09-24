@@ -27,8 +27,8 @@ class Prefix {
         } else {
             args = msg;
         }
-        check1 = (args.startsWith("/"))
-        check2 = (!this.perms.matches(this.msg.author.id, "sudo_commands_allowed", "commands"));
+        let check1 = (args.startsWith("/"))
+        let check2 = (!this.perms.matches(this.msg.author.id, "sudo_commands_allowed", "commands"));
         if (check1 == true) {
             if (check2 == true) {
                 return;
